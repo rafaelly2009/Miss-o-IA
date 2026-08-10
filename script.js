@@ -20,24 +20,34 @@ const perguntas = [
     ]
 },
 {
-    enunciado: "Pergunta 1",
+    enunciado: "Depois de Davi participoude um projeto sobre preservação da natureza a turma iniciou um discussão sobre como proteger o meio ambiente. O que Davi faz?",
     alternativas: [
-        "Alternativa 1",
-        "Alternativa 2"
+        "Defende a reciclagem, a economia de água e o plantio de árvores.",
+        "Afirma que pequenas ações não fazem diferença e que a responsabilidade é apenas do governo."
     ]
 },
 {
-    enunciado: "Pergunta 1",
+    enunciado: "Ao final da discussão, Davi precisou criar um cartaz no computdor para conscientizar as pessoas sobre a preservação do meio ambiente. E agora?",
     alternativas: [
-        "Alternativa 1",
-        "Alternativa 2"
+        "Criar um cartaz com imagens e mensagens sobre reciclagem e preservação da natureza.",
+        "Criar um cartaz dizendo que as ações das pessoas não influenciam na preservação da natureza."
     ]
 },
 {
-    enunciado: "Pergunta 1",
+    enunciado: "Depois de apresentar o cartaz, a professora propôs uma ação para reduzir o desperdicio na escola. O que Davi faz?",
     alternativas: [
-        "Alternativa 1",
-        "Alternativa 2"
+        "Organiza uma campanha para economizar água e separar o lixo reciclável.",
+        "Continua desperdiçando água e jogando lixo em qualquer lugar."
     ]
 }
 ];
+
+let atual = 0;
+let perguntaAtual;
+
+function mostraPergunta() {
+    perguntaAtual = perguntas[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+}
+
+mostraPergunta()
