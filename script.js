@@ -10,11 +10,11 @@ const perguntas = [
     alternativas: [
         {
             texto: "Cuidar do meio ambiente é responsabilidade de todos.",
-            afirmacao: ""
+            afirmacao: "Cuidar do meio ambiente é responsabilidade de todos e pequenas atitudes ajudam a preservar a natureza."
         },
         {
             texto: "Pequenas atitudes não fazem, diferença para o meio ambiente.",
-            afirmacao: ""
+            afirmacao: "A preservação do meio ambiente depende apenas do governo, por isso as ações individuais não fazem diferença."
         }   
     ]
 },
@@ -23,11 +23,11 @@ const perguntas = [
     alternativas: [
         {
             texto: "Organiza uma campanha de reciclagem com a turma.",
-            afirmacao: ""
+            afirmacao: "Pequenas ações coletivas ajudam a preservar o meio ambiente."
         },
         {
             texto: "Decide não participar da campanha porque acredita que não fará dirença.",
-            afirmacao: ""
+            afirmacao: "A participação das pessosas não é essencial para reduzir os impactos ambientais."
         }     
     ]
 },
@@ -36,11 +36,11 @@ const perguntas = [
     alternativas: [
         {
             texto: "Defende a reciclagem, a economia de água e o plantio de árvores.",
-            afirmacao: ""
+            afirmacao: "As atitudes sustentáveis contribuem para preservação do ambiente."
         },
         {
             texto: "Afirma que pequenas ações não fazem diferença e que a responsabilidade é apenas do governo.",
-            afirmacao: ""
+            afirmacao: "A participação da sociedade não é de importância para proteger o meio ambiente."
         }    
     ]
 },
@@ -49,11 +49,11 @@ const perguntas = [
     alternativas: [
         {
             texto: "Criar um cartaz com imagens e mensagens sobre reciclagem e preservação da natureza.",
-            afirmacao: ""
+            afirmacao: "A conscientização ambiental incentiva atitudes sustentáveis e ajuda a preservar o meio ambiente."
         },
         {
             texto:"Criar um cartaz dizendo que as ações das pessoas não influenciam na preservação da natureza.",
-            afirmacao:""
+            afirmacao:"As ações individuais e coletivas não são importantes para proteger a natureza."
         }      
     ]
 },
@@ -62,22 +62,52 @@ const perguntas = [
     alternativas: [
         {
             texto:"Organiza uma campanha para economizar água e separar o lixo reciclável.",
-            afirmacao:""
+            afirmacao: "Economizar recursos naturais e recicar contribuem para a preservação da natureza"
         },
         {
-            texto: "Continua desperdiçando água e jogando lixo em qualquer lugar."
-            afirmacao: ""
+            texto: "Continua desperdiçando água e jogando lixo em qualquer lugar.",
+            afirmacao: "O desperdício de recursos e o descarte incorreto de resíduos não prejudica o meio ambiente."
         }   
     ]
-}
+ },
 ];
+
 
 let atual = 0;
 let perguntaAtual;
+let historiaFinal = "";
 
 function mostraPergunta() {
+    if (atual >= perguntas.length) {
+        mostraResultado();
+        return;
+    }
     perguntaAtual = perguntas[atual];
     caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
+}
+
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas) {
+        const botaoAlternativa = document.createElement("button");
+        botaoAlternativa.textContent = alternativa.texto;
+        botaoAlternativa.addEventListener("click", () => respostaSelecionada(alternativa));
+        caixaAlternativas.appendChild(botaoAlternativa);
+    }
+}
+
+function respostaSelecionada(opcaoSelecionada){
+    const afirmacoes = opcaoSelecionada.afirmacoes;
+    historiaFinal += afirmacoes + "  ";
+    atual++;
+    mostraPergunta();
+}
+
+function mostraResultado() {
+    caixaPerguntas.textContent = "Em 2049...";
+    textoResultado.textContent = historiaFinal;
+    caixaAlternativas.textContent = "";
 }
 
 mostraPergunta()
