@@ -110,4 +110,4 @@ function mostraResultado() {
     caixaAlternativas.textContent = "";
 }
 
-mostraPergunta()
+mostraPergunta();
