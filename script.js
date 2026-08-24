@@ -6,7 +6,7 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
 {
-    enunciado: "Ao sair da escola, Davi vê um parque cheio de lixo e pens no impacto disso para a naturea. O que ele decide?",
+    enunciado: "Ao sair da escola, Davi vê um parque cheio de lixo e pensa no impacto disso para a natureza. O que ele decide?",
     alternativas: [
         {
             texto: "Cuidar do meio ambiente é responsabilidade de todos.",
@@ -26,13 +26,13 @@ const perguntas = [
             afirmacao: "Pequenas ações coletivas ajudam a preservar o meio ambiente."
         },
         {
-            texto: "Decide não participar da campanha porque acredita que não fará dirença.",
+            texto: "Decide não participar da campanha porque acredita que não fará diferença.",
             afirmacao: "A participação das pessosas não é essencial para reduzir os impactos ambientais."
         }     
     ]
 },
 {
-    enunciado: "Depois de Davi participoude um projeto sobre preservação da natureza a turma iniciou um discussão sobre como proteger o meio ambiente. O que Davi faz?",
+    enunciado: "Depois de Davi participou de um projeto sobre preservação da natureza a turma iniciou um discussão sobre como proteger o meio ambiente. O que Davi faz?",
     alternativas: [
         {
             texto: "Defende a reciclagem, a economia de água e o plantio de árvores.",
@@ -45,7 +45,7 @@ const perguntas = [
     ]
 },
 {
-    enunciado: "Ao final da discussão, Davi precisou criar um cartaz no computdor para conscientizar as pessoas sobre a preservação do meio ambiente. E agora?",
+    enunciado: "Ao final da discussão, Davi precisou criar um cartaz no computador para conscientizar as pessoas sobre a preservação do meio ambiente. E agora?",
     alternativas: [
         {
             texto: "Criar um cartaz com imagens e mensagens sobre reciclagem e preservação da natureza.",
@@ -62,7 +62,7 @@ const perguntas = [
     alternativas: [
         {
             texto:"Organiza uma campanha para economizar água e separar o lixo reciclável.",
-            afirmacao: "Economizar recursos naturais e recicar contribuem para a preservação da natureza"
+            afirmacao: "Economizar recursos naturais e reciclar contribuem para a preservação da natureza."
         },
         {
             texto: "Continua desperdiçando água e jogando lixo em qualquer lugar.",
@@ -98,8 +98,8 @@ function mostraAlternativas(){
 }
 
 function respostaSelecionada(opcaoSelecionada){
-    const afirmacoes = opcaoSelecionada.afirmacoes;
-    historiaFinal += afirmacoes + "  ";
+    const afirmacao = opcaoSelecionada.afirmacao;
+    historiaFinal += afirmacao + "  ";
     atual++;
     mostraPergunta();
 }
